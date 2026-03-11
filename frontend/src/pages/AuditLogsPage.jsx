@@ -40,7 +40,7 @@ export default function AuditLogsPage() {
 
   return (
     <div>
-      <h1 className="fw-bold mb-1">Audit Logs</h1>
+      <h1 className="fw-bold mb-1">Logs</h1>
       <p className="text-muted small mb-4">All add, edit, and delete actions are recorded here</p>
 
       {/* Filters */}
@@ -91,8 +91,7 @@ export default function AuditLogsPage() {
                 <th>Action</th>
                 <th>Performed By</th>
                 <th>Student</th>
-                <th>Timestamp</th>
-                <th>IP Address</th>
+                <th>Time</th>
                 <th className="text-end">Details</th>
               </tr>
             </thead>
@@ -129,9 +128,7 @@ export default function AuditLogsPage() {
                       <td className="text-muted" style={{ fontSize: 12 }}>
                         {format(new Date(log.createdAt), 'MMM dd, yyyy HH:mm:ss')}
                       </td>
-                      <td className="font-monospace text-muted" style={{ fontSize: 12 }}>
-                        {log.ipAddress || '—'}
-                      </td>
+                      
                       <td className="text-end">
                         {log.changes && (
                           <button
