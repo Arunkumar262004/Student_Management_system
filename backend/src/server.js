@@ -29,10 +29,6 @@ app.use('/api/auth',       authRoutes);
 app.use('/api/students',   studentRoutes);
 app.use('/api/audit-logs', auditRoutes);
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date() });
-});
 
 // Global error handler
 app.use((err, req, res, next) => {
